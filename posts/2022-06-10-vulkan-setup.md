@@ -47,3 +47,6 @@ Hence, in technical terms, the Setup section teaches you how to get your hands o
 	3. Pick a _physical device_. You need to pick the GPU that you want to use for your program based on certain criteria, such as the GPU's features (what it can do) and the capabilities of supported queue families.
 	4. Create the logical device wrapping the physical device. The logical device contains the API to talk to the GPU.
 	5. Obtain the graphics queue from the logical device.
+
+# First Impressions
+Vulkan is not a game engine. It is a low-level tool that takes time to learn, and while using it, you will encounter obscure errors. On the other hand, you are in control of everything: from the architecture of your game to the tiny details of how it is rendered. Vulkan's behavior is very well documented with its thousand-page-long specification. It's a great tool if you aren't in a rush to create a game as soon as possible but would rather have control over every aspect of your game.
