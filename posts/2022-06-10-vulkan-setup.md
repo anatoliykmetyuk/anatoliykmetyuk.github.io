@@ -5,6 +5,9 @@ description: How to use Vulkan graphics in Scala
 
 Vulkan is a modern API to access graphics cards and use them for rendering and other purposes. An OpenGL successor, it is an essential component driving many modern games.
 
+```toc
+```
+
 # Learning Approach
 ## Approach to the LWJGL wrapper library
 Vulkan is available in Scala via a Java library, LWJGL (Lightweight Java Game Library). LWJGL is truly lightweight: it doesn't introduce any new concepts, but merely mimics the game-related C++ APIs nearly one-to-one. The promise is the capability to program modern games using a high-level language without the loss of performance. The performance parity is achievable because LWJGL and the API it wraps works with off-the-heap memory: just like in C++, you need to manually allocate and deallocate memory. The off-heap data is represented via a concept of `java.nio.ByteBuffer` as well as LWJGL-provided buffer and pointer classes.
