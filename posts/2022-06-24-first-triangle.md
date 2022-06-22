@@ -46,7 +46,7 @@ Since there are several independent frames available, they can be rendered concu
 digraph G {
   "Wait on the inFlight fence" ->
   "Acquire the next available swap chain image to draw upon" ->
-  "Reset inFlight fence to unsignalled – it'll block again when waited upon" ->
+  "Reset inFlight fence to unsignalled state – it'll block again when waited upon" ->
   "Record the command buffer to draw something on the available image" ->
   "Submit the command buffer to the queue" ->
   "Present the frame on the screen" -> "Wait on the inFlight fence"
