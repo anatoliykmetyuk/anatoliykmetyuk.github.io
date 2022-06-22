@@ -38,7 +38,7 @@ Since there are two types of asynchrony we are dealing with in Vulkan, there are
 - __Fences__ – used for the CPU-level synchronization – meaning the host code the user is writing may block on them.
 
 # Render Loop
-The render loop presented in the tutorial has a swap chain queue of frames ready to be drawn upon. For example, if the swap chain has 3 frames in the queue, we can render up to 3 frames ahead of time, before they are displayed to the user.
+The render loop presented in the tutorial has a swap chain queue of frames ready to be drawn upon. For example, if the swap chain has 3 frames in the queue, we can render up to 3 frames ahead of time, before they are displayed to the user. The availability of frames to render ahead of time is desired so that to ensure GPU doesn't block unnecessarily: e.g. if there is a delay in rendering one frame, we'd like the GPU to still start working on the next frame as opposed to blocking on the problematic frame and thereby impacting the end user's FPS rate.
 
 Since there are several independent frames available, they can be rendered concurrently. We can't, however, start drawing on a frame before the previous draw operation on the same frame succeeds, so we need to synchronize between the draw operations on the same frame. This needs to be done from the host code, so we use fences for it.
 
