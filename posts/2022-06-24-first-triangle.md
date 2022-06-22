@@ -12,7 +12,7 @@ At the core of every game is its _render loop_ – the loop that renders each fr
 
 # Concetps
 ## Command Execution Lifecycle
-We communicate to Vulkan what it needs to do via _commands_. Commands need to be submitted to a _command queue_ for processing. For efficiency, before submission to the command queue, the commands are recorded into a _command buffer_ which is created in a _command pool_. After we've recorded all the commands we wanted in the command buffer, they are submitted together, as a batch, to a command queue.
+We communicate to Vulkan what it needs to do via _commands_. Commands need to be submitted to a _command queue_ for processing. For efficiency, before submission to the command queue, the commands are recorded into a _command buffer_ which is created from a _command pool_. After we've recorded all the commands we wanted to the command buffer, they are submitted together, as a batch, to a command queue.
 
 ```dot
 digraph G { rankdir=LR
@@ -25,33 +25,34 @@ digraph G { rankdir=LR
 The commands submitted to a command queue are executed on the GPU.
 
 ## Concurrency Model
-Many of the Vulkan's commands are asynchronous. Furthermore, there are two types of "asynchronous" we are talking about here:
+Many of the Vulkan's commands are asynchronous. Furthermore, there are two types of "asynchronous" we are talking about:
 
-- __Host-level__ asynchronous (_host_ being the user program executed on the CPU that interacts with the GPU) – means vulkan methods that record commands to buffers and that submit buffers to command queue return immediately, without waiting for the commands to be fully executed or submitted.
-- __Device-level__ asynchronous (_device_ being the GPU on which Vulkan commands run) – means that many commands that can be submitted to the command queue are executed on the GPU in parallel. In this sense, the term command _queue_ may be misleading: the queue is true to its name only in the sense that the commands _start their execution_ in the order specified. However, they may not wait for the previous command to finish before they start their execution.
+- __Host-level__ asynchronous (_host_ being the CPU running the user program that interacts with the GPU) – means Vulkan methods that submit command buffers to the command queue return immediately, without waiting for the commands to be fully executed.
+- __Device-level__ asynchronous (_device_ being the GPU on which Vulkan commands run) – means that commands that are submitted to different command queues have no synchronization guarantees. Other queue operations and methods often have insufficient [guarantees](https://www.khronos.org/registry/vulkan/specs/1.3-extensions/html/chap3.html#fundamentals-queueoperation). Furthermore, even commands that are submitted to the same command queue as part of the same command buffer [don't have](https://www.khronos.org/registry/vulkan/specs/1.3-khr-extensions/html/chap6.html) sufficient synchronization guarantees.
 
-The above means that we need a way to synchronize between different operations we perform. Since, for example, we do not want to start rendering on an image before that image becomes available. Vulkan provides _synchronization primitives_ to synchronize between operations. Those primitives can be either _signalled_ or _unsignalled_. An operation may wait on the unsignalled primitive until another operation changes its state to signalled.
+The above means that we need a way to synchronize between different operations we perform. Since, for example, we do not want to start rendering on an image before that image becomes available. Vulkan provides _synchronization primitives_ to synchronize between operations. Those primitives can be either _signalled_ or _unsignalled_. An operation may wait on an unsignalled primitive until another operation changes its state to signalled.
 
 Since there are two types of asynchrony we are dealing with in Vulkan, there are also two types of synchronization primitives Vulkan provides:
 
-- __Semaphores__ – used for the GPU-level synchornization – within queues between the commands submitted to them. Queue commands can wait on them and signal them.
+- __Semaphores__ – used for the GPU-level synchornization – between command buffers submitted to different queues.
 - __Fences__ – used for the CPU-level synchronization – meaning the host code the user is writing may block on them.
 
 # Render Loop
-The render loop presented in the tutorial has a queue of frames ready to be drawn upon in its disposal from the swapchain. In case of my implementation, these are 3 frames. This means we can draw up to 3 frames ahead of time, before they are displayed to the user. This is to have a small margin to ensure good end-user experience: some frames may take longer to render, but if we are consistently 2-3 frames ahead of what the user sees, we can ensure smooth framerate by showing them the frames at the desired refresh rate.
+The render loop presented in the tutorial has a swapchain queue of frames ready to be drawn upon. For example, if the swapchain has 3 frames in the queue, we can render up to 3 frames ahead of time, before they are displayed to the user.
 
-Since there are several independent frames available, they can be rendered to concurrently. We can't, however, start drawing on a frame before the previous draw operation succeeds. So we need to synchronize the frame draw iterations with the same frame's previous draw iterations. This needs to be done from the host code, so we use fences for it.
+Since there are several independent frames available, they can be rendered to concurrently. We can't, however, start drawing on a frame before the previous draw operation on the same frame succeeds, so we need to synchronize between the draw operations on the same frame. This needs to be done from the host code, so we use fences for it.
 
 ```dot
 digraph G {
-  "Wait on the inFlight fence" -> "Acquire next available swapchain image" ->
-  "Reset inFlight fence (can be waited on again)" ->
-  "Record the command buffer to draw something" ->
+  "Wait on the inFlight fence" ->
+  "Acquire the next available swapchain image to draw upon" ->
+  "Reset inFlight fence to unsignalled – it'll block again when waited upon" ->
+  "Record the command buffer to draw something on the available image" ->
   "Submit the command buffer to the queue" ->
   "Present the frame on screen" -> "Wait on the inFlight fence"
 
 
-  "Acquire next available swapchain image" -> "imageAvailable semaphore" [ label = "signals" ]
+  "Acquire the next available swapchain image to draw upon" -> "imageAvailable semaphore" [ label = "signals" ]
   "Submit the command buffer to the queue" -> "imageAvailable semaphore" [ label = "waits on" ]
   "Submit the command buffer to the queue" -> "renderFinished semaphore" [ label = "signals" ]
   "Submit the command buffer to the queue" -> "inFlight fence" [ label = "signals" ]
@@ -63,14 +64,21 @@ digraph G {
 }
 ```
 
-Within the render loop, we communicate with the GPU via Vulkan to first obtain the next available swapchain image to draw on, then record the commands needed to draw on it, and finally submit those commands to the GPU for execution. The syncronization between those operations is done via semaphores:
+Within the render loop, we call Vulkan methods to:
 
-- `imageAvailable` – to signal that the image is ready to be drawn upon. We can't submit the draw commnads before the image is ready.
-- `renderFinished` – to signal that we're done with rendering on the image. We can't present the image on the screen before it is fully rendered upon.
+1. Obtain the next available swapchain image to draw on.
+2. Record the commands needed to draw on it in a command buffer.
+3. Submit those commands to the GPU for execution – but start working on those commands only once (1) has terminated.
+4. Present the swapchain image on the screen – but only once (3) has finished execution.
+
+Those calls will be executed asyncronously. The synchronization between those operations is done via semaphores:
+
+- `imageAvailable` – to signal that the image is ready to be drawn upon.
+- `renderFinished` – to signal that we're done with rendering on the image and it is ready to be presented on screen.
 
 Note how we can record the command buffer before the image is even available. This is becuase the commands in the commnad buffer are only executed after they are submitted to the command queue.
 
 You can check out how this architecture is implemented in Scala [here](https://github.com/anatoliykmetyuk/Vulkan-Tutorial-Scala/blob/7dfc9bb6387c11c4775446270d0297d97f54af25/src/main/scala/Ch21IndexBuffer.scala#L727).
 
 # Conclusion
-The key part of the Vulkan's philosophy are parallelism and explicit synchronization. Two kinds of synchronization primitives are available: fences, to syncronize the CPU code, and semaphores, to synchronize the GPU code. No assumptions are made on how you would like to order the operations you're asking Vulkan to perform, so you need to be explicit about that via these primitives.
+A key part of the Vulkan's design philosophy is explicit approach to synchronization. It doesn't provide you with too much of synchronization guarantees, so you need to enforce the guarantees you need explicitly. To that end, two kinds of synchronization primitives are provided: fences, to syncronize the CPU code with the GPU operations, and semaphores, to synchronize between the GPU operations. The user is expected to design their software with explicit synchornization in mind, so this is something to be aware of when troubleshooting your Vulkan programs.
