@@ -13,7 +13,7 @@ The three main areas are:
 - _Editor_ where you write your code.
 - _Console_ where you see the result of the program execution.
 
-**Important! Press the "Worksheet" button at the Toolbar – this is needed to simplify the workflow for the purposes of this tutorial.**
+**Important! Press the "Worksheet" button at the Toolbar, so that it is green – this is needed to simplify the workflow for the purposes of this tutorial.**
 
 Now write the following in the Editor area and press the Run button at the Toolbar:
 ```scala
