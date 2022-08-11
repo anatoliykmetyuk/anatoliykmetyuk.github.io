@@ -11,6 +11,7 @@ const IndexPage = ({ data }) =>
     <Seo />
     <div>
       <h1 class="title">📖 Introduction to Programming with Scala </h1>
+      <div>Please note that this book is still a work in progress.</div>
       <ul id="blog-posts" class="posts">
         {
           data.allMarkdownRemark.nodes.map(post => {
