@@ -71,6 +71,13 @@ module.exports = {
         name: "posts",
         path: "./posts/",
       }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "scala-intro",
+        path: "./scala-intro/",
+      }
     }
   ]
 };

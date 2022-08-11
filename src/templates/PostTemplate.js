@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 
-const PostTemplate = ({ data }) => {
+const PostTemplate = ({ data, pageContext }) => {
   const post = data.markdownRemark
   const { previous, next } = data
 
@@ -40,7 +40,7 @@ const PostTemplate = ({ data }) => {
           <div class="level m-2">
             <div class="level-item">
               {previous && (
-                <Link to={`/posts/${previous.fields.slug}`}>
+                <Link to={`/${pageContext.section}/${previous.fields.slug}`}>
                   <button class="button is-link-light">
                     ⬅️ {formatNavTitle(previous.frontmatter.title)}
                   </button>
@@ -49,7 +49,7 @@ const PostTemplate = ({ data }) => {
             </div>
             <div class="level-item">
               {next && (
-                <Link to={`/posts/${next.fields.slug}`}>
+                <Link to={`/${pageContext.section}/${next.fields.slug}`}>
                   <button class="button is-link-light">
                     {formatNavTitle(next.frontmatter.title)} ➡️
                   </button>
