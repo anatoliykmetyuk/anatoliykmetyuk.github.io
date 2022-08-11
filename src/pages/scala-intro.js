@@ -25,7 +25,7 @@ const IndexPage = ({ data }) =>
 
 export const query = graphql`
   {
-    allMarkdownRemark(filter: {frontmatter: {section: {eq: "scala-intro"}}}, sort: {fields: fields___slug, order: DESC}) {
+    allMarkdownRemark(filter: {frontmatter: {section: {eq: "scala-intro"}}}, sort: {fields: fields___slug, order: ASC}) {
       nodes {
         frontmatter {
           title

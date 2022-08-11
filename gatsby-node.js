@@ -55,6 +55,7 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: edge.node.fields.slug,
         previousId: edge.previous && edge.previous.id,
         nextId: edge.next && edge.next.id,
+        section: 'posts',
       },
     })
   })
@@ -87,6 +88,7 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: edge.node.fields.slug,
         previousId: edge.previous && edge.previous.id,
         nextId: edge.next && edge.next.id,
+        section: 'scala-intro',
       },
     })
   })
