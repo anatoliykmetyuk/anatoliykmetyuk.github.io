@@ -58,7 +58,7 @@ A method is _declared_ the same way as a variable – except that you need to us
 
 Here is the result of running this program in Scastie:
 
-![](assets/CleanShot%202022-08-11%20at%2000.24.42@2x.png)
+![](/scala-intro_assets/04-more-cities/CleanShot%202022-08-11%20at%2000.24.42@2x.png)
 
 That's right – nothing happened! The method's body is not executed unless we _call_ the method. You can do so as follows:
 
@@ -92,7 +92,7 @@ sayHelloThreeTimes
 
 Notice how we can place an empty line between the method's last statement and the first method call. This empty line is not mandatory but is a good practice to have for readability – it visually separates the method from the rest of the program. The output of the above program is:
 
-![](assets/CleanShot%202022-08-11%20at%2000.53.49@2x.png)
+![](/scala-intro_assets/04-more-cities/CleanShot%202022-08-11%20at%2000.53.49@2x.png)
 
 > Exercise: try to avoid copy-pasting code in the vacation calculator example with the help of methods. You will fail at this task: to succeed, you need one more concept we haven't covered yet. Write down somewhere why exactly you failed and what you might need to succeed. The solution is provided in the next section, so do not read any further before doing this exercise!
 

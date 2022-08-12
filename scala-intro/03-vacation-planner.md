@@ -11,7 +11,7 @@ One of the big tasks the computer is used for is to solve math. Let's see how we
 println(2 + 2)
 ```
 
-![](assets/CleanShot%202022-08-10%20at%2000.10.52@2x.png)
+![](/scala-intro_assets/03-vacation-planner/CleanShot%202022-08-10%20at%2000.10.52@2x.png)
 
 `println` prints to the console whatever _data_ is between the round brackets that follow it. `2 + 2` is not exactly _data_ though: the number `2` is indeed data, but the symbol `+` is a _logic_: it represents an act of adding two numbers together.
 
