@@ -19,8 +19,10 @@ const PostTemplate = ({ data, pageContext }) => {
       <Seo title={post.frontmatter.title} description={post.frontmatter.description} article="true" image={post.frontmatter.image} />
       <div class="content p-3">
         <div class="level is-mobile">
-          <div class="level-left">
-            <p class="level-item has-text-grey-light">{post.fields.date}</p>
+          <div class="level-left"> {
+            post.fields.date
+            ? <p class="level-item has-text-grey-light">{post.fields.date}</p>
+            : <p class="level-item"><Link to={"/" + post.frontmatter.section}>📖</Link></p> }
           </div>
           <div class="level-right">
             <p class="level-item"><Link to="/">🏠</Link></p>
@@ -74,6 +76,7 @@ export const query = graphql`
         title
         description
         image
+        section
       }
       fields {
         date(formatString: "MMM DD, YYYY")
