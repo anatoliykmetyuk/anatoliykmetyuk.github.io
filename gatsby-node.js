@@ -62,7 +62,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const scalaIntro = await graphql(`
     {
-      allMarkdownRemark(filter: {frontmatter: {section: {eq: "scala-intro"}}}, sort: {fields: fields___date, order: ASC}) {
+      allMarkdownRemark(filter: {frontmatter: {section: {eq: "scala-intro"}}}, sort: {fields: fields___slug, order: ASC}) {
         edges {
           node {
             fields {
