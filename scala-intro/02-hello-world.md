@@ -52,3 +52,4 @@ We've just composed our first program in the Scala programming language that pri
 - **Console** – a text area where the computer writes the result of the code execution.
 - **Method** – a kind of logic in Scala.
 - **Parameter** – a data that a method works on.
+
