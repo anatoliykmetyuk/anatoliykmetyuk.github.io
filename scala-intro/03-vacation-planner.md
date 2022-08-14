@@ -88,7 +88,7 @@ This feature is called _String Interpolation_. _String_ means "text" in the Scal
 - **String Interpolation** – a technique for using variables inside a String.
 
 ## Homework
-- Change the vacation cost calculator to model a consecutive stay in two different cities: Barcelona and Rome. Your itinerary looks as follows: Helsinki -\> Barcelona -\> Rome -\> Helsinki. You must account for the flights from Helsinki to Barcelona, Barcelona to Rome, and Rome to Helsinki. You will also need to account for the different costs of life and accommodation in the two cities and the different durations of stay in both cities.
-- [Body Mass Index](https://en.wikipedia.org/wiki/Body_mass_index) is a metric used in medicine to determine a healthy weight for a person. It is calculated as `BMI = kg/(m*m)` where `kg` is a person's weight in kilograms and `m` is their height in meters. Your task is to write a BMI calculator where the user inputs their height and mass in two variables.
-- **HARD**: Make the vacation calculator program output the cost in the following format: "Total cost: 640$" – that is, use `$` instead of `USD`.
+1. Change the vacation cost calculator to model a consecutive stay in two different cities: Barcelona and Rome. Your itinerary looks as follows: Helsinki -\> Barcelona -\> Rome -\> Helsinki. You must account for the flights from Helsinki to Barcelona, Barcelona to Rome, and Rome to Helsinki. You will also need to account for the different costs of life and accommodation in the two cities and the different durations of stay in both cities.
+2. [Body Mass Index](https://en.wikipedia.org/wiki/Body_mass_index) is a metric used in medicine to determine a healthy weight for a person. It is calculated as `BMI = kg/(m*m)` where `kg` is a person's weight in kilograms and `m` is their height in meters. Your task is to write a BMI calculator where the user inputs their height and mass in two variables.
+3. **HARD**: Make the vacation calculator program output the cost in the following format: "Total cost: 640$" – that is, use `$` instead of `USD`.
 
