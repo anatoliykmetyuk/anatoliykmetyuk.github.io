@@ -50,12 +50,19 @@ def processChapter(c: Chapter): Unit =
     val imageRegex = """!\[\]\(assets\/(.+)\)""".r
     text = imageRegex.replaceAllIn(text, m => {
       assetNamesBuf.append(m.group(1).replace("%20", " "))
-      s"![](/scala-intro_assets/${m.group(1)})"
+      s"![](/scala-intro_assets/$chapterSlug/${m.group(1)})"
     })
     assetNamesBuf.result()
 
   def addToc() =
-    text = "```toc\n```\n" + text
+    text = "```toc\n```\n\n" + text
+
+  def addFrontMatter() =
+    val frontMatter = s"""---
+      |title: ${c.name}
+      |section: scala-intro
+      |---""".stripMargin
+    text = s"$frontMatter\n$text"
 
   def writeChapter() =
     os.write(os.pwd / "scala-intro" / s"$chapterSlug.md", text)
@@ -67,6 +74,7 @@ def processChapter(c: Chapter): Unit =
 
   val assets = routeAssets()
   addToc()
+  addFrontMatter()
   writeChapter()
   writeAssets(assets)
 end processChapter
