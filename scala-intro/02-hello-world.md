@@ -20,7 +20,7 @@ Now write the following in the Editor area and press the Run button at the Toolb
 println("Hello World")
 ```
 
-At the Console, you should see the output similar to the following:
+At the Console, you should see the output similar to the following (the lines starting with `[info]` only appear when you run the program for the first time, please ignore them):
 ![](/scala-intro_assets/02-hello-world/CleanShot%202022-08-04%20at%2023.30.59@2x.png)
 
 Congratulations! You've written your first program! Now let's see what it is made of.
@@ -42,14 +42,14 @@ println("The sun is shining today!")
 The output will be:
 ![](/scala-intro_assets/02-hello-world/CleanShot%202022-08-05%20at%2000.18.28@2x.png)
 
-## Homework
-Write a program that outputs a recipe for your favorite dish.
-
-We've just composed our first program in the Scala programming language that prints some text to the console. We've also seen what basic logic and data look like in a real program. In the next chapter, we will expand our vocabulary and write a bit more complex program.
+> 📚 **Recap**: We've just composed our first program in the Scala programming language that prints some text to the console. We've also seen what basic logic and data look like in a real program. In the next chapter, we will expand our vocabulary and write a bit more complex program.
 
 ## Concepts Recap
 - **Code Editor** – a text editor where you write the code.
 - **Console** – a text area where the computer writes the result of the code execution.
 - **Method** – a kind of logic in Scala.
 - **Parameter** – a data that a method works on.
+
+## Homework
+Write a program that outputs a recipe for your favorite dish.
 

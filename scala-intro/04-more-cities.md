@@ -7,7 +7,7 @@ section: scala-intro
 
 What if we want to calculate not a single vacation but two or three? Say, after Barcelona, we go to Rome. We'd like to know how much each vacation costs separately and then calculate the total of all vacations.
 
-> Exercise: try to solve this problem yourself before reading on to the solution.
+> 🎯 **Exercise**: try to solve this problem yourself before reading on to the solution.
 
 One way to do it would be to add more variables to cover all vacations. Note that, once defined, the value of a variable cannot be changed. This means that if we defined `val hotelCostDaily = 80`, then `hotelCostDaily` will remain `80` across the entire program and cannot be changed. So, we'll have to get creative with the names of the variables to ensure all of them are unique:
 
@@ -38,7 +38,7 @@ Total for Rome: 960 USD
 Total overall: 1600 USD
 ```
 
-> Task: plan the third vacation: this time, you're flying from Rome to Tallinn – make up the costs for the flights, meals, and accommodations.
+> 🎯 **Exercise**: plan the third vacation: this time, you're flying from Rome to Tallinn – make up the costs for the flights, meals, and accommodations.
 
 There is a problem with this approach: it doesn't scale. For every new city, we need to copy-paste the existing code, change the variable names to indicate which city they belong to, and change the text `println` outputs to mention which city the cost is calculated for.
 
@@ -94,7 +94,7 @@ Notice how we can place an empty line between the method's last statement and th
 
 ![](/scala-intro_assets/04-more-cities/CleanShot%202022-08-11%20at%2000.53.49@2x.png)
 
-> Exercise: try to avoid copy-pasting code in the vacation calculator example with the help of methods. You will fail at this task: to succeed, you need one more concept we haven't covered yet. Write down somewhere why exactly you failed and what you might need to succeed. The solution is provided in the next section, so do not read any further before doing this exercise!
+> 🎯 **Exercise**: try to avoid copy-pasting code in the vacation calculator example with the help of methods. You will fail at this task: to succeed, you need one more concept we haven't covered yet. Write down somewhere why exactly you failed and what you might need to succeed. The solution is provided in the next section, so do not read any further before doing this exercise!
 
 ## Vacation Calculator, the Method Way
 If you've tried the exercise from the previous section, you must have encountered a problem. Let's try doing it step-by-step, starting from putting into a method the code that we copy-paste frequently:
@@ -162,14 +162,61 @@ Total for the vacation: 640 USD
 Total for the vacation: 960 USD
 ```
 
-> Exercise: Change the method so that the output mentions the city for which the vacation is being computed: for example, "Total for Rome: 960 USD". Hint: the data type that represents text is `String`.
+> 🎯 **Exercise**: Change the method so that the output mentions the city for which the vacation is being computed: for example, "Total for Rome: 960 USD". Hint: the data type that represents text is `String`.
 
-## Homework
-Define a method for the Body Mass Index calculation (see the homework for the previous chapter for the detailed task specification).
+## Method Result
+We are not quite done yet. The method-less example at the beginning of this chapter also had a `Total overall` output with the sum of the cost of a vacation for every city. To achieve that, we saved the total for each city in a variable, `totalRome` and `totalBarcelona`. Then, we computed `val overallTotal = totalRome + totalBarcelona`.
+
+How should we define `totalRome` and `totalBarcelona`? Originally, we defined them in terms of a calculation of a corresponding total:
+
+```scala
+val totalRome = flightBarcelonaRome + desiredStayDurationRome * (hotelCostDailyRome + costOfLifeDailyRome)`
+```
+
+But we moved the logic doing the calculation to a method. So the variable definition should use that method:
+
+```scala
+// This code doesn't work yet! Read on...
+val totalRome = calculateVacationCost(400, 100, 40, 4)
+```
+
+`calculateVacationCost` here is a method – a logic. It is used where data is expected – in the variable definition. Hence, it is an expression, and Scala will evaluate it to reduce it to data (as we've seen in the previous chapter).
+
+How are method calls reduced to data? _Whatever you wrote last at the method body becomes the data the method is reduced to when it is called._ This data is called a _method result_. For example:
+
+```scala
+def square(x: Int) =
+  val result = x * x
+  result
+
+println(square(10))
+```
+
+Will output `100` and `result` at the end of the method body is the method's result. Note that you can also write the above example in an even more compact way:
+
+```scala
+def square(x: Int) =
+  x * x
+
+println(square(10))
+```
+
+`x * x` is an expression here, because it is a mix of data and logic that we used where Scala expects raw data – at the very end of the method. So, the expression will be evaluated and the resulting data will become method's result.
+
+When a method's result is a certain data, we say that the method _returns_ that data.
+
+> 🎯 **Exercise**: knowing what you know now about the method results, change the `calculateVacationCost` code so that the method returns the cost that the method calculated. Use that cost to compute the overall vacation total – a sum of the costs for each city – as it was done in the method-less example at the beginning of this chapter.
+
+> 📚 **Recap**: In this chapter, we've seen methods as a way to avoid copy-pasting code. Methods achieve that by giving a name to logic. Our programs are getting more and more complex, and errors are inevitable – so in the next chapter, we'll learn how to deal with them.
 
 ## Concepts Recap
 - **Method** – a logic with a name that can be executed by referring to that name. Used when we find ourselves copy-pasting the same code. Syntax: `def methodName = ...`
 - **Method's Body** – a logic that is executed when a method is called. Is written after the `=` sign in the method definition, from a new line and with two spaces of indentation. Variables defined in the body are invisible from outside of the body, but the variables defined outside are visible from the body.
 - **Method's Parameter** – a kind of a variable defined for the method's body that is different between different calls to the method. E.g., in the vacation calculator method, the flight cost is different for different vacations, and so it must become a parameter. A parameter is specified in the method definition after the method's name inside parentheses with its data type. Multiple parameters are separated by a comma: `def vacationCost(flights: Int, dailyStay: Int) = ...`.
 - **Indentation** – the number of spaces from the start of the line to where the code starts. E.g. `  println("X")` has indentation of 2, `    println("X")` – of 4 and `println("X")` – of 0.
+- **Method Result** – when you write logic at a place where Scala expects data, Scala evaluates that logic as an expression. Method result is what Scala evaluates method calls to. Method result is what you wrote last in a method body. For example, in `def square(x: Int) = x * x`, `x * x` is method's result, and so `val tenSquared = square(10)` will mean that `tenSquared` variable will be equal to `100`.
+- **To return** – in a sentence like "method call returns data", means that method's result is data. Continuing the example above, the method call `square(10)` above _returns_ `100`.
+
+## Homework
+Define a method for the Body Mass Index calculation (see the homework for the previous chapter for the detailed task specification).
 

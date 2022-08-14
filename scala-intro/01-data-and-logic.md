@@ -47,7 +47,7 @@ All interactions on the social network happen via _logic_ which is another funda
 
 Logic is _executed_ by the computer. Most of the time, the result of running a piece of logic is data manipulation: some data gets created, modified, or deleted.
 
-In the next chapter, we will see an example of data and logic in our first program.
+> 📚 **Recap**: In this chapter, we've learned about the two basic things out of which all the programming is built – data and logic. In the next chapter, we will see an example of data and logic in our first program.
 
 ## Concepts Recap
 - **Data** – information stored in the computer, such as blog articles, Instagram pictures, YouTube videos etc. When you speak about them, you may naturally use nouns to refer to them.

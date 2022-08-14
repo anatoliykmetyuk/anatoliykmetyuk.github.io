@@ -19,7 +19,7 @@ println(2 + 2)
 
 For example, in the case of the expression `2 + 2`, Scala will first execute the `+` operation, reducing the entire expression to the number `4`.
 
-> Question: how can we change the above code so that the program outputs the text `2 + 2` instead of `4`?
+> ❓**Question**: how can we change the above code so that the program outputs the text `2 + 2` instead of `4`?
 
 ## Vacation Planner
 You are living in Helsinki, Finland. It is summer, and you are planning your vacation. You're going to Barcelona, Spain, and your budget is 500$. You need a way to determine how long you can stay there given the following costs:
@@ -35,7 +35,7 @@ println(200 + 4 * (30 + 80))
 
 The output is `640`, meaning we are 140$ over the budget.
 
-> Task: use this program to determine the maximal number of days for the vacation given the 500$ budget. Play with the number of days until the output becomes less than 500.
+> 🎯 **Exercise**: use this program to determine the maximal number of days for the vacation given the 500$ budget. Play with the number of days until the output becomes less than 500.
 
 ## Variables
 There's a problem with our expression: it's easy to lose track of what the numbers represent. If you revisit your program in a couple of days, you may not remember which of the two numbers, `30` and `80` stands for the meals and which – is for the hotel. The problem will only worsen if we add more expenses to our program.
@@ -75,12 +75,9 @@ So, to use a variable in a text:
 
 This feature is called _String Interpolation_. _String_ means "text" in the Scala lingo – from now on, we will prefer the word "String" to the word "text". "Interpolation" is a smart-sounding term that Google defines as "a remark interjected in a conversation".
 
-> Task: make the program output the cost in the following format: "Total cost: 640 USD".
+> 🎯 **Exercise**: make the program output the cost in the following format: "Total cost: 640 USD".
 
-## Homework
-- Change the vacation cost calculator to model a consecutive stay in two different cities: Barcelona and Rome. Your itinerary looks as follows: Helsinki -\> Barcelona -\> Rome -\> Helsinki. You must account for the flights from Helsinki to Barcelona, Barcelona to Rome, and Rome to Helsinki. You will also need to account for the different costs of life and accommodation in the two cities and the different durations of stay in both cities.
-- [Body Mass Index](https://en.wikipedia.org/wiki/Body_mass_index) is a metric used in medicine to determine a healthy weight for a person. It is calculated as `BMI = kg/(m*m)` where `kg` is a person's weight in kilograms and `m` is their height in meters. Your task is to write a BMI calculator where the user inputs their height and mass in two variables.
-- **HARD**: Make the vacation calculator program output the cost in the following format: "Total cost: 640$" – that is, use `$` instead of `USD`.
+> 📚 **Recap**: In this chapter, we've learned how to do basic arithmetics in Scala. We've also covered variables as a means to give a name to data. In the next chapter, we'll learn how to give a name to logic. 
 
 ## Concepts Recap
 - **Expression** – a mix of data and logic (such as `2 + 2`) provided by a programmer in a place where the program expects only data.
@@ -89,4 +86,9 @@ This feature is called _String Interpolation_. _String_ means "text" in the Scal
 - **Keyword** – a "magic" word defined by the programming language. For example, `val` is a keyword that starts a variable definition in Scala.
 - **String** – a text data type.
 - **String Interpolation** – a technique for using variables inside a String.
+
+## Homework
+- Change the vacation cost calculator to model a consecutive stay in two different cities: Barcelona and Rome. Your itinerary looks as follows: Helsinki -\> Barcelona -\> Rome -\> Helsinki. You must account for the flights from Helsinki to Barcelona, Barcelona to Rome, and Rome to Helsinki. You will also need to account for the different costs of life and accommodation in the two cities and the different durations of stay in both cities.
+- [Body Mass Index](https://en.wikipedia.org/wiki/Body_mass_index) is a metric used in medicine to determine a healthy weight for a person. It is calculated as `BMI = kg/(m*m)` where `kg` is a person's weight in kilograms and `m` is their height in meters. Your task is to write a BMI calculator where the user inputs their height and mass in two variables.
+- **HARD**: Make the vacation calculator program output the cost in the following format: "Total cost: 640$" – that is, use `$` instead of `USD`.
 
