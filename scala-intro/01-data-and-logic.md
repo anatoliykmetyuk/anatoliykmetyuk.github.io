@@ -29,7 +29,7 @@ In programming, the situation when we have to deal with a multitude of individua
 ### The Fundamental Data Type
 Every data type is built, at the end of the day, of one fundamental data type. A number. Here's how.
 
-Consider text. It is really a collection of letters. Each letter can be represented with a number. For example, 'a' can be '0', 'b' can be '1', 'c' can be '2' and so on. Then, the word "cat" can be represented by a collection of numbers '3', '0' and '21'.
+Consider text. It is really a collection of letters. Each letter can be represented with a number. For example, 'a' can be '0', 'b' can be '1', 'c' can be '2' and so on. Then, the word "cat" can be represented by a collection of numbers '2', '0' and '19'.
 
 Consider a photo. A photo is really a collection of dots of different colors – pixels. So, a 1000x1000 photo is really a collection of 1,000,000 pixels. And each pixel is defined by its color. Each color can be made up by mixing three base colors: red, green, and blue. And so, every color can be represented by three numbers, each representing the intensity of the color's red, green, and blue components correspondingly.
 
