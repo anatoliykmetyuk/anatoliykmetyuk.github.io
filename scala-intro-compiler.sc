@@ -42,7 +42,8 @@ def clearOutput() =
   (os.list(markdown) ++ os.list(assets)).foreach(os.remove.all)
 
 def processChapter(c: Chapter): Unit =
-  val chapterSlug = "%02d".format(c.id) + "-" + c.name.replace(" ", "-").toLowerCase
+  val chapterSlug = "%02d".format(c.id) + "-" +
+    c.name.filter(c => c.isLetter || c.isDigit || c.isWhitespace).replace(" ", "-").toLowerCase
   var text = c.text
 
   def routeAssets() =
