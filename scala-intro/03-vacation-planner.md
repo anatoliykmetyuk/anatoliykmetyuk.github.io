@@ -1,5 +1,5 @@
 ---
-title: Vacation Planner
+title: "Vacation Planner"
 section: scala-intro
 ---
 ```toc

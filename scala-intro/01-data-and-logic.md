@@ -1,5 +1,5 @@
 ---
-title: Data and Logic
+title: "Data and Logic"
 section: scala-intro
 ---
 ```toc

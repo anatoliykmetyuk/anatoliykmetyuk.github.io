@@ -1,5 +1,5 @@
 ---
-title: More Cities
+title: "More Cities"
 section: scala-intro
 ---
 ```toc

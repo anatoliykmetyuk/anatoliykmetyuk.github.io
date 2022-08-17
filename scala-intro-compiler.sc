@@ -59,7 +59,7 @@ def processChapter(c: Chapter): Unit =
 
   def addFrontMatter() =
     val frontMatter = s"""---
-      |title: ${c.name}
+      |title: "${c.name}"
       |section: scala-intro
       |---""".stripMargin
     text = s"$frontMatter\n$text"

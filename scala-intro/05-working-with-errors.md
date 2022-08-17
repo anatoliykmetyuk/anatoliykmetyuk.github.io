@@ -1,5 +1,5 @@
 ---
-title: Working with Errors
+title: "Working with Errors"
 section: scala-intro
 ---
 ```toc
