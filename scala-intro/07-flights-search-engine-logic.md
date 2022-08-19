@@ -247,6 +247,11 @@ If you want to find the single cheapest flight, you can use the `head` method on
 println(flightsDatabase.sortBy(f => f._3).head)
 ```
 
+## Summary
+In this chapter, we've learned a few useful things we can do with lists. We've learned how to look up data in lists, and how to transform one list into another by specifying how to transform each individual element of that list. We've also learned how to transform lists by specifying a transformation that gives us more than one element from the entries of the original list.
+
+Our code has an important problem as it is right now though: it's really hard to read and understand. So, in the next chapter we'll build on what we've learned and see how to do the same thing in a more idiomatic and readable way.
+
 ## Concepts
 - **Function** – a type of an argument that some methods defined on collections take. Written as `a => logic` , where `a` is the name that you intend to use in `logic` to refer to every element of that collection. And `logic` is the logic to be done on that element. This logic can _result_ in data, the same way as methods result in data. The particular result that a function must produce depends on the method it is used as an argument for.
 - **Predicate** – a function that checks a certain condition on each element of a collection.
