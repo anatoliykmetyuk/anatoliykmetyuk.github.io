@@ -22,8 +22,21 @@ const PostTemplate = ({ data, pageContext }) => {
           <div class="level-left"> {
             post.fields.date
             ? <p class="level-item has-text-grey-light">{post.fields.date}</p>
-            : <><p class="level-item"><Link to={"/" + post.frontmatter.section}>📖 Contents</Link></p> {
-              post.frontmatter.section === "scala-intro" && <p class="level-item"><a href="https://scastie.scala-lang.org/" target="_blank" rel="noreferrer">💻 Write Code</a></p> }</> }
+            : <>
+                <p class="level-item"><Link to={"/" + post.frontmatter.section}><i class="fa-solid fa-book"></i> Contents</Link></p> {
+                post.frontmatter.section === "scala-intro" && <>
+                  <p class="level-item">
+                    <a href="https://scastie.scala-lang.org/" target="_blank" rel="noreferrer">
+                      <i class="fa-solid fa-laptop-code"></i> Write Code
+                    </a>
+                  </p>
+                  <p class="level-item">
+                    <a href="https://discord.gg/ywpJTcxcSx" target="_blank" rel="noreferrer" class="mr-2">
+                      <i class="fa-brands fa-discord"></i> School
+                    </a>
+                  </p>
+                </> }
+              </> }
           </div>
           <div class="level-right">
             <p class="level-item"><Link to="/">🏠</Link></p>
