@@ -41,7 +41,7 @@ In our example, the predicate is `f => f.departure == "Geneva"`. It is understoo
 
 When working with collections, we will be working with this `=>` notation very frequently. The entire construct built with the `=>` notation is called a _function_, and it specifies what we want Scala to do with every element of the list. To the right of the arrow `=>`, we specify what to do with every element of the list, and to the left of the arrow, we write the name by which we are going to refer to those elements on the right-hand side. So:
 
-![](/scala-intro_assets/08-flights-search-engine-logic/CleanShot%202022-08-18%20at%2022.09.25@2x.png)
+![](/scala-intro_assets/08-flights-search-engine-logic/CleanShot%202022-09-17%20at%2011.15.45@2x.png)
 
 > 💡 **Food for thought**: is function a data or logic?
 > 
@@ -114,7 +114,7 @@ println(flightsDatabase.filter(f => f.departure == "Geneva"))
 
 Next, we want to take this list of flights and turn it into a list of cities:
 
-![](/scala-intro_assets/08-flights-search-engine-logic/CleanShot%202022-08-19%20at%2016.54.46@2x.png)
+![](/scala-intro_assets/08-flights-search-engine-logic/CleanShot%202022-09-17%20at%2011.20.22@2x.png)
 
 When we make a list from another list in Scala so, that every element of the new list is a transformed version of one element of a previous list, we call this operation a _map_ in Scala. For example: `List(1, 2, 3).map(n => n - 1)` results in a `List(0, 1, 2)`.
 
