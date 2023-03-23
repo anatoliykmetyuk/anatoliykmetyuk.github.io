@@ -5,3 +5,4 @@ public
 *.textbundle
 .bsp/
 .scala-build/
+.metals/
