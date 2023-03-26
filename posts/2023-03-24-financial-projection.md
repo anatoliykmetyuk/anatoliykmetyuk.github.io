@@ -26,8 +26,8 @@ The solution I propose takes the form of a Google Sheet. The job of the Sheet is
 
 The sheet has two tabs:
 
-- 🧭 Projection - where you can see the projection of your balance for every future month.
-- 💸 Cashflow - where you enter all of your income and expenses, as well as how frequently they reoccur.
+- **🧭 Projection** - where you can see the projection of your balance for every future month.
+- **💸 Cashflow** - where you enter all of your income and expenses, as well as how frequently they reoccur.
 
 ## Workflow
 
