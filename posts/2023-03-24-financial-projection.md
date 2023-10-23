@@ -20,7 +20,7 @@ Furthermore, the task is non-trivial, since not all recurring cashflow is born e
 
 ![Model Overview](/post_assets/2023-03-24-financial-projection/model-overview.png)
 
-[**💾 Get the Template**](https://docs.google.com/spreadsheets/d/1rKvm2MOiPudP3N5yDTYTYdAR_JYxMftoaEW7PS5bRFo/edit?usp=sharing)
+[**💾 Get the Template**](https://docs.google.com/spreadsheets/d/1dMgDxpUU7ZbepUQpN81akw8QCtIO0_wsFnjmB_RiEQM/edit?usp=sharing)
 
 The solution I propose takes the form of a Google Sheet. The job of the Sheet is simple: for every given month, predict how much money you will have, given all of your recurring expenses and income.
 
@@ -33,7 +33,7 @@ The sheet has two tabs:
 
 ### 1. Get the template
 
-To get started, open the [template](https://docs.google.com/spreadsheets/d/1rKvm2MOiPudP3N5yDTYTYdAR_JYxMftoaEW7PS5bRFo/edit?usp=sharing) and create a copy to your own Google Drive: File -> Make a copy.
+To get started, open the [template](https://docs.google.com/spreadsheets/d/1dMgDxpUU7ZbepUQpN81akw8QCtIO0_wsFnjmB_RiEQM/edit?usp=sharing) and create a copy to your own Google Drive: File -> Make a copy.
 
 ### 2. Specify projection range and recurring cashflow
 
