@@ -21,15 +21,6 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-fontawesome-css",
     "gatsby-plugin-catch-links",
-
-    {
-      resolve: "gatsby-plugin-google-tagmanager",
-      options: {
-        id: "GTM-MGZJP4K",
-        includeInDevelopment: false,
-      },
-    },
-
     {
       resolve: "gatsby-transformer-remark",
       options: {
