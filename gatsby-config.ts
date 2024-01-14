@@ -14,12 +14,10 @@ module.exports = {
     twitter: "akmetiuk",
   },
   plugins: [
-    "gatsby-plugin-sitemap", // TODO this doesn't work for some reason
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sass",
-    "gatsby-plugin-fontawesome-css", // TODO replace with https://lucide.dev/
     "gatsby-plugin-catch-links",
     {
       resolve: "gatsby-transformer-remark",
@@ -39,15 +37,6 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: "gatsby-plugin-social9-socialshare",
-      options: {
-        content: "8d8a4787d537487d991c279d63daa2fa",
-        async: true,
-        defer: true,
-      },
-    },
-
     {
       resolve: "gatsby-source-filesystem",
       options: {
