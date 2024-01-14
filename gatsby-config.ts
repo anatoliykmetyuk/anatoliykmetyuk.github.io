@@ -19,6 +19,8 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-sass",
     "gatsby-plugin-catch-links",
+    "gatsby-plugin-sitemap",
+
     {
       resolve: "gatsby-transformer-remark",
       options: {

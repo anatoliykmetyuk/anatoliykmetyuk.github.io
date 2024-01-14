@@ -31,6 +31,9 @@
 	"portsAttributes": {
 		"8000": {
 			"label": "Gatsby Dev Server"
+		},
+		"9000": {
+			"label": "Gatsby Prod Server"
 		}
 	},
 
