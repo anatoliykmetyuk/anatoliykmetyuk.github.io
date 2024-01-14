@@ -45,25 +45,23 @@ exports.createPages = async ({ graphql, actions }: CreatePagesArgs) => {
 
   const templatePath = path.resolve(`src/templates/PostTemplate.tsx`)
 
-  const blogPages = await graphql<Queries.AllBlogPostsQuery>(`
-    query AllBlogPosts {
-      allMarkdownRemark(sort: {fields: fields___date, order: ASC}) {
-        edges {
-          node {
-            fields {
-              slug
-            }
-          }
-          next {
-            id
-          }
-          previous {
-            id
-          }
+  const blogPages = await graphql<Queries.AllBlogPostsQuery>(`query AllBlogPosts {
+  allMarkdownRemark(sort: {fields: {date: ASC}}) {
+    edges {
+      node {
+        fields {
+          slug
         }
       }
+      next {
+        id
+      }
+      previous {
+        id
+      }
     }
-  `);
+  }
+}`);
 
   if (!blogPages.data) throw new Error('Failed to query blog posts ' + blogPages.errors);
 

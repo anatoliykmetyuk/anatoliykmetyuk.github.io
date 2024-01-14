@@ -25,20 +25,18 @@ const IndexPage = ({ data }: PageProps<Queries.IndexQuery>) =>
 export const Head = ({ location: { pathname } }: HeadProps) =>
   <Header pathname={pathname} />
 
-export const query = graphql`
-  query Index {
-    allMarkdownRemark(sort: {fields: fields___date, order: DESC}) {
-      nodes {
-        frontmatter {
-          title
-        }
-        fields {
-          date(formatString: "MMM DD, YYYY")
-          slug
-        }
+export const query = graphql`query Index {
+  allMarkdownRemark(sort: {fields: {date: DESC}}) {
+    nodes {
+      frontmatter {
+        title
+      }
+      fields {
+        date(formatString: "MMM DD, YYYY")
+        slug
       }
     }
   }
-`
+}`
 
 export default IndexPage
