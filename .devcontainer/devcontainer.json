@@ -1,0 +1,51 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+	"name": "Node.js & TypeScript",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"dsznajder.es7-react-js-snippets",
+				"GraphQL.vscode-graphql-syntax",
+				"sidthesloth.html5-boilerplate",
+				"csstools.postcss",
+				"dbaeumer.vscode-eslint",
+				"mhutchie.git-graph",
+				"GitHub.copilot",
+				"GitHub.copilot-chat",
+				"codezombiech.gitignore",
+				"GraphQL.vscode-graphql",
+				"ecmel.vscode-html-css",
+				"ms-vscode.vscode-typescript-next",
+				"christian-kohler.npm-intellisense",
+				"YoavBls.pretty-ts-errors",
+				"bradlc.vscode-tailwindcss",
+				"austenc.tailwind-docs",
+				"mattpocock.ts-error-translator",
+				"Orta.vscode-twoslash-queries"
+			]
+		}
+	},
+	"portsAttributes": {
+		"8000": {
+			"label": "Gatsby Dev Server"
+		}
+	},
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "rm -r .cache node_modules ; npm install"
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
