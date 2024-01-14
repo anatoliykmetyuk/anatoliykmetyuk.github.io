@@ -1,9 +1,8 @@
 import * as React from "react"
 import { graphql, HeadProps, Link, PageProps } from "gatsby"
-import { Script } from "gatsby"
 
 import Layout from "../components/Layout"
-import Seo from "../components/SEO"
+import Header from "../components/Header"
 
 
 const PostTemplate = ({ data }: PageProps<Queries.PostTemplateQuery>) => {
@@ -75,36 +74,8 @@ const PostTemplate = ({ data }: PageProps<Queries.PostTemplateQuery>) => {
   );
 };
 
-export const Head = ({ location, data }: HeadProps<Queries.PostTemplateQuery>) => {
-  const post = data.markdownRemark;
-  const { pathname } = location;
-
-  return (
-    <>
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-        crossOrigin="anonymous"
-        referrerPolicy="no-referrer"
-      />
-      <Script
-        defer
-        data-domain="akmetiuk.com"
-        src="https://plausible.cloud.akmetiuk.com/js/script.js"
-      />
-
-      { post && <Seo
-        pathname={pathname}
-        title={post.frontmatter.title}
-        description={post.frontmatter.description}
-        article={true}
-        image={post.frontmatter.image}
-        />
-      }
-    </>
-  );
-}
+export const Head = ({ location: { pathname }, data }: HeadProps<Queries.PostTemplateQuery>) =>
+  <Header pathname={pathname} post={data.markdownRemark?.frontmatter} />
 
 export const query = graphql`
   query PostTemplate(

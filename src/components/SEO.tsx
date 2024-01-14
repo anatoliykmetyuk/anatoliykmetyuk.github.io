@@ -1,22 +1,19 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import { PostFrontmatter } from "../types";
+
 
 type SEOProps = {
   pathname: string;
-  article?: boolean | null;
-  title?: string | null;
-  description?: string | null;
-  image?: string | null;
+  post?: PostFrontmatter;
 };
 
 const SEO = ({
   pathname,
-  title,
-  description,
-  image,
-  article = false,
+  post,
 }: SEOProps) => {
   const { site } = useStaticQuery<Queries.SEOQuery>(query);
+  const article = !!post;
 
   const {
     defaultTitle,
@@ -28,9 +25,9 @@ const SEO = ({
   } = site!.siteMetadata!;
 
   const seo = {
-    title: title || defaultTitle!,
-    description: description || defaultDescription!,
-    image: `${siteUrl}${image || defaultImage!}`,
+    title: post?.title || defaultTitle!,
+    description: post?.description || defaultDescription!,
+    image: `${siteUrl}${post?.image || defaultImage!}`,
     url: `${siteUrl}${pathname}`,
   };
 
