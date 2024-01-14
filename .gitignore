@@ -6,3 +6,4 @@ public
 .bsp/
 .scala-build/
 .metals/
+src/gatsby-types.d.ts

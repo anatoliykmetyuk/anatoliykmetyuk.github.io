@@ -1,4 +1,6 @@
 module.exports = {
+  graphqlTypegen: true,
+
   siteMetadata: {
     title: `Home`,
     siteUrl: `https://www.akmetiuk.com`,
@@ -12,7 +14,6 @@ module.exports = {
     twitter: "akmetiuk",
   },
   plugins: [
-    "gatsby-plugin-react-helmet", // TODO replace with the Head API https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
     "gatsby-plugin-sitemap", // TODO this doesn't work for some reason
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
@@ -60,13 +61,6 @@ module.exports = {
       options: {
         name: "posts",
         path: "./posts/",
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "scala-intro",
-        path: "./scala-intro/",
       },
     },
   ],
