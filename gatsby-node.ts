@@ -12,6 +12,12 @@ exports.createSchemaCustomization = ({ actions }: CreateSchemaCustomizationArgs)
 
     type MarkdownRemarkFields {
       slug: String!
+      date(
+        difference: String
+        formatString: String
+        fromNow: Boolean
+        locale: String
+      ): Date!
     }
 
     type Frontmatter {
