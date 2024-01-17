@@ -3,16 +3,17 @@ import { Book, Computer, GithubIcon, LinkedinIcon, RssIcon, TwitterIcon } from "
 import Link from 'next/link';
 import SocialLink from './SocialLink';
 import { PrettyList, PrettyListItem } from './PrettyList';
+import Image from 'next/image';
 
 const Sidebar = () => {
   return (
-    <div className="card flex flex-col items-center gap-4 max-w-sm font-medium">
+    <div className="card flex flex-col items-center gap-4 max-w-xs font-medium">
       <h1 className="text-3xl flex flex-col items-center font-extrabold text-purple-950 gap-1">
         <span>Hi.</span>
-        <span>I'm Anatolii.</span>
+        <span>I&apos;m Anatolii.</span>
       </h1>
       <Link href="/">
-        <img src="/images/avatar.jpg" className="rounded-full w-48 h-48" />
+        <Image src="/images/avatar.jpg" className="rounded-full w-48 h-48" width={48} height={48} alt='avatar'/>
       </Link>
       {/* <h2 className="text-xl font-bold text-purple-950">I'm Anatolii.</h2> */}
       <div className="flex flex-row gap-2 w-full justify-center">
@@ -29,7 +30,7 @@ const Sidebar = () => {
       </div>
       <PrettyList className="flex flex-col items-center gap-2 max-w-s text-left px-2 mt-3">
         <PrettyListItem icon={<Computer />}>
-          I'm a Scala Engineer at the{" "}
+            I&apos;m a Scala Engineer at the{" "}
           <Link href="https://scala.epfl.ch" target="_blank" className="link">
             Scala Center
           </Link>
