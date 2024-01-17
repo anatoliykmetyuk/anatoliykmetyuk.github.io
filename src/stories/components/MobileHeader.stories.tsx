@@ -12,7 +12,19 @@ const meta: Meta<typeof MobileHeader> = {
 export default meta;
 type Story = StoryObj<typeof MobileHeader>;
 
-export const Default: Story = {
+export const NoTitle: Story = {
   args: {
+  },
+};
+
+export const CustomTitle: Story = {
+  args: {
+    title: "Nice blog post!",
+  },
+};
+
+export const ReallyLongTitle: Story = {
+  args: {
+    title: "Towards a better understanding of the role of the CTO in a startup",
   },
 };

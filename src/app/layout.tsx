@@ -8,7 +8,7 @@ import MobileHeader from '@/components/MobileHeader'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "Anatolii's Blog",
+  title: "Home",
   description: "I'm Anatolii, a Scala engineer and hacker, and this is my blog.",
 }
 
@@ -24,7 +24,7 @@ export default function RootLayout({
         inter
       )}
     >
-      <MobileHeader />
+      <MobileHeader title={metadata.title?.toString()} />
       <Sidebar />
       <div className="card w-full flex flex-col flex-1 gap-4 p-4 overflow-auto">
         {children}
