@@ -1,10 +1,9 @@
-import Article, { ArticleProps } from "@/components/Article";
-import { readMarkdownFile } from "@/lib/markdown";
+import Article from "@/components/Article";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Article> = {
   component: Article,
-  title: "Article",
+  title: "Components/Article",
 };
 
 export default meta;

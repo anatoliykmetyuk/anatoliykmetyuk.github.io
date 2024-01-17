@@ -15,7 +15,7 @@ const ArticlePreview = ({ date, title, excerpt, slug, tags }: ArticlePreviewProp
   return (
     <div className="border border-dashed border-foreground rounded-md p-3 flex flex-col w-full gap-2">
       <Link href={`/posts/${slug}`}>
-        <div className="flex flex-row sm:items-center gap-2 w-full">
+        <div className="flex flex-row items-center gap-2 w-full">
           <span className="text-muted-foreground flex-shrink-0">{formatDate(date)}</span>
           <h2 className="text-xl font-semibold">{title}</h2>
         </div>

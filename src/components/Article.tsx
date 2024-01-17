@@ -3,7 +3,7 @@ import { Home } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 
-export type ArticleProps = {
+type ArticleProps = {
   title: string
   date: Date
   content: string

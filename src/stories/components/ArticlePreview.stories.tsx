@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof ArticlePreview> = {
   component: ArticlePreview,
-  title: "ArticlePreview",
+  title: "Components/ArticlePreview",
   decorators: [
     (Story) => (
       <div className="card">

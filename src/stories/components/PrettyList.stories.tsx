@@ -4,7 +4,7 @@ import { Cat, Computer, Github } from "lucide-react";
 
 const meta: Meta<typeof PrettyList> = {
   component: PrettyList,
-  title: "PrettyList",
+  title: "Components/PrettyList",
 };
 
 export default meta;

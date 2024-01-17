@@ -1,5 +1,9 @@
 import type { Preview } from "@storybook/react";
-import RootLayout from "@/app/layout";
+import { cn } from "@/lib/utils";
+import { Inter } from "next/font/google";
+import "@/app/globals.css";
+
+const inter = Inter({ subsets: ["latin"] });
 
 const preview: Preview = {
   parameters: {
@@ -13,9 +17,14 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      <RootLayout>
+      <div
+        className={cn(
+          "min-h-screen bg-background",
+          inter
+        )}
+      >
         <Story />
-      </RootLayout>
+      </div>
     ),
   ],
 };

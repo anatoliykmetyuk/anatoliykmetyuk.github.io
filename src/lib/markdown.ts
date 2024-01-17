@@ -8,8 +8,8 @@ export type BlogPostSource = {
   title: string;
   date: Date;
   content: string;
+  excerpt: string;
   description?: string;
-  excerpt?: string;
   tags?: string[];
 }
 
@@ -24,7 +24,7 @@ export function readMarkdownFile(slug: string): BlogPostSource {
     content,
     description: data.description,
     tags: data.tags,
-    excerpt,
+    excerpt: excerpt!,
   };
 }
 
