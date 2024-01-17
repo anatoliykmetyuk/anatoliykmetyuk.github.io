@@ -8,6 +8,8 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
+    "@storybook/addon-a11y",
+    "@storybook/addon-storysource",
   ],
   framework: {
     name: "@storybook/nextjs",
@@ -16,6 +18,7 @@ const config: StorybookConfig = {
   docs: {
     autodocs: "tag",
   },
+  staticDirs: ["../public"], //👈 Configures the static asset folder in Storybook
   webpackFinal: async (config) => {
     if (config.resolve) {
       config.resolve.alias = {
