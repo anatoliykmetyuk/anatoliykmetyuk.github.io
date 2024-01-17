@@ -1,9 +1,0 @@
-node_modules/
-.cache/
-public
-.DS_Store
-*.textbundle
-.bsp/
-.scala-build/
-.metals/
-src/gatsby-types.d.ts
