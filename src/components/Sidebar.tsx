@@ -1,5 +1,5 @@
 import React from 'react'
-import { Book, Computer, Github, Linkedin, Twitter } from "lucide-react";
+import { Book, Computer, GithubIcon, LinkedinIcon, RssIcon, TwitterIcon } from "lucide-react";
 import Link from 'next/link';
 import SocialLink from './SocialLink';
 import { PrettyList, PrettyListItem } from './PrettyList';
@@ -18,13 +18,14 @@ const Sidebar = () => {
       <div className="flex flex-row gap-2 w-full justify-center">
         <SocialLink
           href="https://www.linkedin.com/in/akmetiuk/"
-          icon={<Linkedin />}
+          icon={<LinkedinIcon />}
         />
         <SocialLink
           href="https://github.com/anatoliykmetyuk"
-          icon={<Github />}
+          icon={<GithubIcon />}
         />
-        <SocialLink href="https://twitter.com/akmetiuk" icon={<Twitter />} />
+        <SocialLink href="https://twitter.com/akmetiuk" icon={<TwitterIcon />} />
+        <SocialLink href="/rss.xml" icon={<RssIcon />} />
       </div>
       <PrettyList className="flex flex-col items-center gap-2 max-w-s text-left px-2 mt-3">
         <PrettyListItem icon={<Computer />}>
