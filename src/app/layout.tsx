@@ -16,15 +16,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body
+      <div
         className={cn(
           "min-h-screen bg-background",
           inter
         )}
       >
         {children}
-      </body>
-    </html>
+      </div>
   );
 }
