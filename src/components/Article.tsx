@@ -11,8 +11,8 @@ type ArticleProps = {
 
 const Article = ({ title, date, content }: ArticleProps) => {
   return (
-    <div className="card w-full flex flex-col items-center">
-      <div className="flex flex-col items-center gap-3 w-full max-w-3xl">
+    <div className="w-full flex flex-col items-center overflow-clip">
+      <div className="flex flex-col items-center gap-3 w-full max-w-3xl overflow-y-scroll">
         <div className="flex flex-row w-full justify-between p-2">
           <span className="text-muted-foreground">{formatDate(date)}</span>
           <Link href="/">
