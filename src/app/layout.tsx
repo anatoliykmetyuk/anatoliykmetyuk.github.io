@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <div
       className={cn(
-        "h-screen bg-background overflow-auto w-full flex md:flex-row flex-col gap-1 md:p-3",
+        "h-screen bg-background overflow-auto w-full flex md:flex-row flex-col gap-1 md:gap-2 md:p-3",
         inter
       )}
     >

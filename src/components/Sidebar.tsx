@@ -8,7 +8,7 @@ import SocialLink from './SocialLink';
 
 const Sidebar = () => {
   return (
-    <div className="card md:flex flex-col items-center gap-4 max-w-xs font-medium hidden">
+    <div className="card md:flex flex-col items-center gap-4 max-w-xs font-medium hidden overflow-hidden">
       <h1 className="text-3xl flex flex-col items-center font-extrabold text-purple-950 gap-1">
         <span>Hi.</span>
         <span>I&apos;m Anatolii.</span>
