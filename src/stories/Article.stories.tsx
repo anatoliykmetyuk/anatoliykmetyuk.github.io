@@ -1,4 +1,5 @@
-import Article from "@/components/Article";
+import Article, { ArticleProps } from "@/components/Article";
+import { readMarkdownFile } from "@/lib/markdown";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Article> = {
@@ -16,4 +17,3 @@ export const Default: Story = {
     content: "Here we go, programming is great!",
   },
 };
-

@@ -83,4 +83,8 @@
   .link {
     @apply text-purple-700 hover:text-purple-900;
   }
+
+  .text-secondary {
+    @apply text-slate-400;
+  }
 }
