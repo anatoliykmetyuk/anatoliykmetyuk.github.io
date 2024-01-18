@@ -13,3 +13,15 @@ export const Default: Story = {
   args: {
   },
 };
+
+export const Constrained: Story = {
+  args: {
+  },
+  decorators: [
+    (Story) => (
+      <div className="h-[300px] overflow-hidden">
+        <Story />
+      </div>
+    ),
+  ],
+};

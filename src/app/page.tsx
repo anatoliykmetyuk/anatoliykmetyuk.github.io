@@ -1,4 +1,5 @@
 import ArticlePreview from "@/components/ArticlePreview"
+import { ScrollArea } from "@/components/ui/scroll-area"
 import { BlogPostSource } from "@/lib/markdown"
 
 type IndexProps = {
@@ -8,13 +9,15 @@ type IndexProps = {
 const Index = ({ articles }: IndexProps) => {
   return (
     <div className="w-full overflow-clip">
-      <ul className="flex flex-col gap-2 h-full overflow-y-scroll">
-        {articles.map((article) => (
-          <li key={article.slug}>
-            <ArticlePreview {...article} />
-          </li>
-        ))}
-      </ul>
+      <ScrollArea className='h-full'>
+        <ul className="flex flex-col gap-2">
+          {articles.map((article) => (
+            <li key={article.slug}>
+              <ArticlePreview {...article} />
+            </li>
+          ))}
+        </ul>
+      </ScrollArea>
     </div>
   );
 }

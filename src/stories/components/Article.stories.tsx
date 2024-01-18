@@ -6,11 +6,14 @@ const meta: Meta<typeof Article> = {
   title: "Components/Article",
   decorators: [
     (Story) => (
-      <div className="card">
+      <div className="card h-screen overflow-hidden">
         <Story />
       </div>
     ),
   ],
+  parameters: {
+    layout: "fullscreen",
+  },
 };
 
 export default meta;
@@ -21,5 +24,13 @@ export const Default: Story = {
     title: "Hello World :)",
     date: new Date(2021, 2, 1),
     content: "Here we go, programming is great!",
+  },
+};
+
+export const ReallyLongContents: Story = {
+  args: {
+    title: "Hello World :)",
+    date: new Date(2021, 2, 1),
+    content: "Here we go, programming is great!".repeat(100),
   },
 };
