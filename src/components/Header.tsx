@@ -21,7 +21,7 @@ export const Header = ({ pathname, post }: HeaderProps) => {
       <Script
         defer
         data-domain="akmetiuk.com"
-        src="https://plausible.cloud.akmetiuk.com/js/script.js"
+        src="https://plausible.akmetiuk.com/js/script.js"
       />
       <SEO pathname={pathname} post={post} />
     </>
