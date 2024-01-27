@@ -1,23 +1,29 @@
 import ArticlePreview from "@/components/ArticlePreview"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { BlogPostSource } from "@/lib/markdown"
+import { BlogPostSource, getBlogPostSources } from "@/lib/markdown"
+import React from "react";
 
-type IndexProps = {
-  articles: BlogPostSource[]
-}
 
-const Index = ({ articles }: IndexProps) => {
+const Index: React.FC<{}> = () => {
+  let articles: BlogPostSource[] = getBlogPostSources();
+  // Sort articles by date
+  articles.sort((a, b) => {
+    if (a.date > b.date) return -1;
+    else if (a.date < b.date) return 1;
+    else return 0;
+  });
+
   return (
     <div className="w-full overflow-clip">
-      <ScrollArea className='h-full'>
+      <div className="h-full overflow-y-auto overflow-x-clip">
         <ul className="flex flex-col gap-2">
           {articles.map((article) => (
             <li key={article.slug}>
+              foobar
               <ArticlePreview {...article} />
             </li>
           ))}
         </ul>
-      </ScrollArea>
+      </div>
     </div>
   );
 }

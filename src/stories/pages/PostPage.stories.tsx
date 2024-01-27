@@ -23,14 +23,14 @@ type Story = StoryObj<typeof PostPage>;
 
 export const Default: Story = {
   args: {
-    article: dummyPosts[0],
-    articleHtml: "<p>Hello world!</p>",
+    testArticle: dummyPosts[0],
+    testArticleHtml: "<p>Hello world!</p>",
   },
 };
 
 export const ReallyLongContents: Story = {
   args: {
-    article: dummyPosts[0],
-    articleHtml: "<p>Hello world!</p>".repeat(100),
+    testArticle: dummyPosts[0],
+    testArticleHtml: "<p>Hello world!</p>".repeat(100),
   },
 }

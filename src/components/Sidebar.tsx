@@ -4,14 +4,13 @@ import Link from 'next/link';
 import { PrettyList, PrettyListItem } from './PrettyList';
 import Image from 'next/image';
 import SocialLink from './SocialLink';
-import { ScrollArea } from './ui/scroll-area';
 
 
 const Sidebar = () => {
   return (
     <div className="card hidden md:block max-w-xs h-full">
-      <ScrollArea className='w-full h-full font-medium'>
-        <div className='w-full h-full flex flex-col items-center gap-4'>
+      <div className='w-full h-full font-medium'>
+        <div className='w-full h-full flex flex-col items-center gap-4 overflow-y-auto'>
           <h1 className="text-3xl flex flex-col items-center font-extrabold text-purple-950 gap-1">
             <span>Hi.</span>
             <span>I&apos;m Anatolii.</span>
@@ -70,7 +69,7 @@ const Sidebar = () => {
             </PrettyListItem>
           </PrettyList>
         </div>
-      </ScrollArea>
+      </div>
     </div>
   );
 }

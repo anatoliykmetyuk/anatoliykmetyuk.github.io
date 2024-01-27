@@ -8,7 +8,6 @@ export type BlogPostSource = {
   title: string;
   date: Date;
   content: string;
-  excerpt: string;
   description?: string;
   tags?: string[];
 }
@@ -16,21 +15,30 @@ export type BlogPostSource = {
 export function readMarkdownFile(slug: string): BlogPostSource {
   const filePath = `posts/${slug}.md`;
   const source = fs.readFileSync(filePath, 'utf-8');
-  const { data, content, excerpt } = matter(source, { excerpt: true });
+  const { data, content } = matter(source);
   return {
     slug,
     title: data.title,
-    date: data.date,
+    date: getBlogPostDate(slug),
     content,
     description: data.description,
     tags: data.tags,
-    excerpt: excerpt!,
   };
 }
 
-export function getBlogPostSlugs() {
+function getBlogPostSlugs() {
   const postFileNames = fs.readdirSync('posts');
   return postFileNames.map(fileName => fileName.replace(/\.md$/, ''));
+}
+
+function getBlogPostDate(slug: string): Date {
+  const dateStr = slug.slice(0, 10);
+  return new Date(dateStr);
+}
+
+export function getBlogPostSources(): BlogPostSource[] {
+  const slugs = getBlogPostSlugs();
+  return slugs.map(slug => readMarkdownFile(slug));
 }
 
 export async function markdownToHtml(markdown: string) {
