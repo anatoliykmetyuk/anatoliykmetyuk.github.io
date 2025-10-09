@@ -105,11 +105,18 @@ Let us see how our GUI example behaves under the rewriting approach.
 
 First, we need to define the axioms we are working under (note that the axioms below are ad-hoc ones, for the sake of this example only. The real engine is built upon different axioms):
 
-$\\(1):\frac{ax+by}{a:\varepsilon \rightarrow x; \delta \rightarrow by}\\
-\phantom{(1):)} b:\varepsilon \rightarrow y; \delta \rightarrow ax
-\\(2):\frac{ax}{a: r \rightarrow rx}
-\\(3):\varepsilon x = x\varepsilon = x
-\\(4):\delta x = \delta$
+```
+(1): ax+by
+     a: ε → x; δ → by
+     b: ε → y; δ → ax
+
+(2): ax
+     a: r → rx
+
+(3): εx = xε = x
+
+(4): δx = δ
+```
 
 The axioms with the horizontal bar are further discussed in the "Axioms" section. Roughly, they dictate how to evaluate the expressions above the bar, and, depending on the result of this evaluation, rewrite the expression as described by the right-hand side expression of the arrow.
 
@@ -136,14 +143,18 @@ Hence, there are two kinds of axioms: rewriting axioms and suspension axioms. Th
 
 For example, this is a set of axioms for the sequential composition of processes:
 
-$\\\textbf{Rewriting Axioms}
-\\\phantom{ }[*]() = \varepsilon
-\\\phantom{ }[*]([*](x)::y) = [*](x::y)
-\\\phantom{ }[*](\varepsilon::x) = x
-\\\phantom{ }[*](\delta::x) = \delta
-\\
-\\\textbf{Suspension Axioms}
-\\\frac{[*](a::x)}{a\rightarrow[*](r::x)}$
+```
+Rewriting Axioms:
+[*]() = ε
+[*]([*](x)::y) = [*](x::y)
+[*](ε::x) = x
+[*](δ::x) = δ
+
+Suspension Axioms:
+[*](a::x)
+-----------
+a → [*](r::x)
+```
 
 A sequence is presented as `[*](list)`, where `list` is a list of expressions, and `::` is concatenation.
 

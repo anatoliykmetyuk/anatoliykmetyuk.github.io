@@ -192,7 +192,7 @@ Intuitively, every example above is similar. All of them involve a recursive str
 
 A better way to look at it is as if we were replacing the substructures by their evaluations and then evaluating the resulting structure.
 
-For example, when evaluating a `Nat` depicted by [the diagram above](#nat_diagram), the next step of its evaluation would look as follows:
+For example, when evaluating a `Nat` depicted by the diagram above, the next step of its evaluation would look as follows:
 
 ```dot
 digraph G { label=" Structure " rankdir=LR
@@ -208,7 +208,7 @@ digraph G { label=" Structure " rankdir=LR
 
 Effectively, we have `Succ(previous = 2)`, which is then collapsed into `1 + 2` == `3`. However, `previous` is supposed to be a `Nat`, not an `Int`. In order to be able to write the above statement, we can allow the substructure to have an arbitrary type: `Succ[A](previous: A)`.
 
-Similarly, the next step for the `IntList` [depicted](#list_diagram) above will be:
+Similarly, the next step for the `IntList` depicted above will be:
 
 ```dot
 digraph G { label=" Structure " rankdir=TB newrank=true
@@ -229,7 +229,7 @@ digraph G { label=" Structure " rankdir=TB newrank=true
 
 This is effectively a `Cons[Int](head = 1, tail = 5)` (again, notice how we introduce a type parameter for the substructure). After that, the `head` is added to the new `tail`, resulting in `6`
 
-Finally, for the `Expr` [above](#expr_diagram), the next step is to evaluate both of its two substructures:
+Finally, for the `Expr` above, the next step is to evaluate both of its two substructures:
 
 
 ```dot
@@ -491,7 +491,7 @@ The `Based[T]` type class captures the idea that a type `T` must "know" the type
 ### Recursive - to tear structures down
 `Recursive[T]` has a single abstract method, `project`, and a whole lot of methods specifying various schemes of recursion you can run on `T`. Our `cata` is among them. But obviously `project` is of the most interest, since it is the only abstract method and hence its implementation sheds light on what it means for a type `T` to be `Recursive`.
 
-`project` can be interpreted as `T => Base[T]`. In the section on [practical applications](#practice) of the fixed-point type we already discussed that it is crucial to be able to extract the type `F[T]` from its fixed point representation `T`. If `T` is `Recursive` you can extract `F[T]` from `T`, where `F` is the higher-kinded type `T` is a fixed point of. You can specify this `F` via a type in the companion object of `Recursive` - `Recursive.Aux[T, F[_]]`.
+`project` can be interpreted as `T => Base[T]`. In the section on practical applications of the fixed-point type we already discussed that it is crucial to be able to extract the type `F[T]` from its fixed point representation `T`. If `T` is `Recursive` you can extract `F[T]` from `T`, where `F` is the higher-kinded type `T` is a fixed point of. You can specify this `F` via a type in the companion object of `Recursive` - `Recursive.Aux[T, F[_]]`.
 
 The fact that you can extract `F[T]` from `T` is a necessary condition for the recursion schemes defined in the `Recursive[T]` type class. They have one thing in common: they all tear down a recursive structure. Here is an intuition for this:
 
@@ -609,7 +609,7 @@ val exprRes = eval(expr[Fix[Expr]])
 println(exprRes)  // 9
 ```
 
-Main differences from our [ad-hoc solution](#examples-using-cata):
+Main differences from our ad-hoc solution:
 
 - Fixed point behavior generalized: we no longer use a concrete type `Fix` to either build up or tear down our structures. Instead, we require corresponding behavior via `Recursive` and `Corecursive` type classes.
 - Nicer syntax for `cata`: only one type parameter and the convenient OOP-like syntax with the `.` - thanks to `import matryoshka.implicits._`.

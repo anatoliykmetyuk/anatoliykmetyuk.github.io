@@ -87,7 +87,7 @@ File(fileName).contentAsString      : String  // Read a file as a String. May th
 println(s"Parsed file: $fileBody")  : Unit
 ```
 
-Every side effect and foreign effect type we have identified in the [Handler Side Effects](#handler-side-effects) subsection has its own extension. The semantics of each extension with respect to the expression it is called on is as follows:
+Every side effect and foreign effect type we have identified in the Handler Side Effects subsection has its own extension. The semantics of each extension with respect to the expression it is called on is as follows:
 
 1. `.etr` – lifts `Either` to `Ef`.
 2. `.sus` – wraps the (by-name) expression into an `IO` context, then lifts this `IO` to `Ef`.

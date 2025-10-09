@@ -100,7 +100,7 @@ A recommended approach in such a situation is to sum the money in all your bank 
 
 The financial projection template does not track credit card debt. The projected balance is the sum balance on all your bank accounts, it is NOT your net worth. If you are planning to make some expense off a credit card, you can set its date in the *Cashflow* sheet to the date when you are planning to repay that expense. For example, if you buy your groceries off the credit card and repay it at the end of the month on a given day, you can set the "Groceries" expense's Start date to the date when you repay the credit card.
 
-If you have a multi-bank environment with credit cards, you should consider using the financial projection sheet in conjunction with budgeting software such as YNAB as was discussed [above](#relationship-with-other-personal-finance-software).
+If you have a multi-bank environment with credit cards, you should consider using the financial projection sheet in conjunction with budgeting software such as YNAB as was discussed above.
 
 ## Advanced Technique: Scenario-based Planning
 
