@@ -1,6 +1,7 @@
 ---
 title: "Personal Financial Projection Tool"
 description: A technique to build awareness of your financial situation projected into the future.
+layout: post
 ---
 
 One can find enough software for personal finance on the Internet. Typically, this software focuses on reviewing and categorization of your past expenses. Often, there are features like automatic categorization, integration with bank apps, and reminders to pay recurring expenses.

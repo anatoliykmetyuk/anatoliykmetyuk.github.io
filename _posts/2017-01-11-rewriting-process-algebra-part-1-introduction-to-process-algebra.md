@@ -4,11 +4,9 @@ title: "Rewriting Process Algebra, Part 1: Introduction to Process Algebra"
 description: A rewriting-based process algebra implementation in Scala.
 keywords: [process algebra,scala,subscript,free object,functional programming,algebra of communicating processes,acp,category theory,concurrent programming,concurrency,reactive programming]
 ---
-```toc
-```
-<br/>
-
 This is the first part of a progress report on my attempt to model a process algebra as an expression rewriting machine. The process algebra in question is [SubScript](http://subscript-lang.org/from-acp-and-scala-to-subscript/)[^1][^2], which is an extension of [ACP](https://en.wikipedia.org/wiki/Algebra_of_Communicating_Processes). It is recommended to familiarize yourself with ACP and [process algebras](https://en.wikipedia.org/wiki/Process_calculus) before reading this article further.
+
+<!-- more -->
 
 This part covers the idea of process algebra and why it can be useful. It is a bird's eye glance of how a process algebra engine can help you in writing programs. You can have a look at the work in progress at the [FreeACP](https://github.com/anatoliykmetyuk/free-acp) repository.
 
