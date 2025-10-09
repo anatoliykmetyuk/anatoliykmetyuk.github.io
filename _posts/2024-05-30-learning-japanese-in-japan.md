@@ -27,7 +27,7 @@ Third, the solution needs to be convenient: I need to be able to do the daily pr
 
 # The App
 
-<img alt="Screenshot" src="/content/images/2024/05/photo_2024-05-30_21-42-40-1.jpg" style="height: 500px;" />
+<img alt="Screenshot" src="/post_assets/2024-05-30-learning-japanese-in-japan/photo_2024-05-30_21-42-40-1.jpg" style="height: 500px;" />
 
 Since I didn't find a decent flashcards app that would allow to store the cards in Sheets, I made my own. I used AppSmith to do it - open-source, visual-oriented, self-hostable internal tools builder. Programmable with JS if your soul so desires. Took me 3 evenings to build a usable prototype, and two weeks of iterating to improve it as I used it.
 
@@ -35,11 +35,11 @@ To practice Kanji writing, I use Apple Notes app which allows for drawing with m
 
 # Ingress
 
-<img alt="Alt" src="/content/images/2024/05/Screenshot-2024-04-29-124823-1.png" style="height: 500px;" />
+<img alt="Alt" src="/post_assets/2024-05-30-learning-japanese-in-japan/Screenshot-2024-04-29-124823-1.png" style="height: 500px;" />
 
 This is a screenshot from my Kanji practice textbook. How do you turn that...
 
-<img alt="Alt" src="/content/images/2024/05/Screenshot-2024-05-30-215404.png" style="height: 500px;" />
+<img alt="Alt" src="/post_assets/2024-05-30-learning-japanese-in-japan/Screenshot-2024-05-30-215404.png" style="height: 500px;" />
 
 ...into this? If you enter by hand, it'll take a lot of time and you won't be doing it consistently.
 
