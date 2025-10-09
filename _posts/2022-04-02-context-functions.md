@@ -1,7 +1,6 @@
 ---
 title: Context Function for DSL Design in Scala
 description: How Context Functions can help design better DSLs in Scala
-image: /images/scala3.png
 layout: post
 ---
 
