@@ -4,6 +4,8 @@ layout: post
 ---
 Being exposed to unbiased, relevant, high-quality news can open the door to professional opportunities, learning, quality personal time. How do we consume news and other content in this day and age? It is mainly via personalized feeds of social networks and notifications they send us.
 
+<!-- more -->
+
 There are a few problems with this approach:
 
 - **Isolation.** The feeds are isolated one from another. You can't merge your YouTube and Instagram feed into one, for example - even if they are close by meaning.
