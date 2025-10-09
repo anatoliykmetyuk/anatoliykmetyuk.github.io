@@ -7,3 +7,7 @@ if ENV["JEKYLL_VERSION"] == "< 4.0"
   gem "bigdecimal"
   gem "kramdown-parser-gfm", "~> 1.0"
 end
+
+group :development do
+  gem 'html-proofer'
+end
