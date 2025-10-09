@@ -14,7 +14,9 @@ In our daily programming life, we encounter recursive data structures on a regul
 
 <!-- more -->
 
-# Recursive data structures The best-known examples include linked lists and trees. Often working with such data structures we have a need to evaluate (collapse) them to a value. For example:
+# Recursive data structures
+
+The best-known examples include linked lists and trees. Often working with such data structures we have a need to evaluate (collapse) them to a value. For example:
 
 - Given a list of integers, say 1, 2 and 3, one may want to find their sum 6.
 - Given a parser of arithmetic expressions, such as `2 * 3 + 3`, we can expect it to produce a tree out of that expression - `Add(Mult(Num(2), Num(3)), Num(3))`. Such trees often need to be evaluated by actually performing these mathematical operations.
