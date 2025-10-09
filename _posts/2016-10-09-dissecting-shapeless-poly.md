@@ -9,7 +9,7 @@ In this article, I would like to analyse the architecture of Shapeless' polymorp
 
 <!-- more -->
 
-If you are new to Shapeless, you may want to read the first article of the series: [Learning Shapeless: HLists](/blog/2016/09/30/learning-shapeless-hlists.html).
+If you are new to Shapeless, you may want to read the first article of the series: [Learning Shapeless: HLists](/posts/2016-09-30-dissecting-shapeless-hlists).
 
 This article does not aim to introduce polymorphic functions or provide a motivation for their usage. Its focus is to understand how the machinery behind them works. If you are new to the concept of polymorphic functions, I recommend reading the following excellent articles by Miles Sabin before proceeding with this article:
 

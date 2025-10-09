@@ -27,7 +27,7 @@ These reported events include:
 - Some of the operands of an operator requested a break of this operator's execution (behaves roughly the same as a brake of a loop in Java).
 
 ## Example
-Let us have a look at how our GUI example from [Part 1](/blog/2017/01/11/rewriting-process-algebra-part-1-introduction-to-process-algebra.html) of this series would have been executed in the standard implementation:
+Let us have a look at how our GUI example from [Part 1](/posts/2017-01-11-rewriting-process-algebra-part-1-introduction-to-process-algebra) of this series would have been executed in the standard implementation:
 
 1. A hierarchy of actors (nodes) is created:
 ```dot
@@ -165,4 +165,4 @@ Precisely, the algorithm is as follows:
 3. Otherwise, apply a rewrite axiom and recursively feed the result to this algorithm.
 
 # Conclusion
-This part covered the theory and motivation for the rewriting-based implementation of SubScript, as well as the theory behind the standard implementation. In the [third part](/blog/2017/01/13/rewriting-process-algebra-part-3-freeacp-implementation.html), we will dive into the code and survey the architectural highlights of the work done so far in this direction.
+This part covered the theory and motivation for the rewriting-based implementation of SubScript, as well as the theory behind the standard implementation. In the [third part](/posts/2017-01-13-rewriting-process-algebra-part-3-freeacp-implementation), we will dive into the code and survey the architectural highlights of the work done so far in this direction.

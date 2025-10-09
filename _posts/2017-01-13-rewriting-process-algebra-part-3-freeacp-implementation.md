@@ -37,7 +37,7 @@ Some points to note about them:
 - Suspension axioms take a `Tree[S]` and return a `List[S[Tree[S]]]`. `List` reflects that there may be a need to make a choice between several trees. `S[Tree[S]]` means that the trees which the current one should be rewritten to are not readily available and are computed in `S`.
 
 # Execution
-These axioms are applied in a [loop](https://github.com/anatoliykmetyuk/free-acp/blob/0932ccde36b0efa83dd01b25ca1fee393154d987/core/src/main/scala/freeacp/Tree.scala#L67) until a terminal case is reached, as described in the theory in [Part 2](/blog/2017/01/12/rewriting-process-algebra-part-2-engine-theory.html).
+These axioms are applied in a [loop](https://github.com/anatoliykmetyuk/free-acp/blob/0932ccde36b0efa83dd01b25ca1fee393154d987/core/src/main/scala/freeacp/Tree.scala#L67) until a terminal case is reached, as described in the theory in [Part 2](/posts/2017-01-12-rewriting-process-algebra-part-2-engine-theory).
 
 # Suspension type as a free object
 If one has a `Tree[S]`, they do not have much choice but to execute it under `S`. This may not always be desirable: For instance, one may have a `Tree[`[Eval](https://static.javadoc.io/org.typelevel/cats-core_2.12/0.8.1/cats/Eval$.html)`]`, but want to execute it in parallel via `Future`.

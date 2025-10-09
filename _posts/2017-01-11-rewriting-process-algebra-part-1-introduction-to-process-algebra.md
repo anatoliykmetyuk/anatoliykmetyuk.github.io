@@ -99,4 +99,4 @@ eventSystem.register(secondButtonCallback)
 ```
 
 # Conclusion
-This first part of the progress report introduced the concept of process algebra and demonstrated how it can be used in practice. In the [second part](/blog/2017/01/12/rewriting-process-algebra-part-2-engine-theory.html), we will have a look at the standard implementation of an engine for SubScript that is able to execute PA expressions. Also, we will introduce a possibility of an alternative implementation of the engine, FreeACP.
+This first part of the progress report introduced the concept of process algebra and demonstrated how it can be used in practice. In the [second part](/posts/2017-01-12-rewriting-process-algebra-part-2-engine-theory), we will have a look at the standard implementation of an engine for SubScript that is able to execute PA expressions. Also, we will introduce a possibility of an alternative implementation of the engine, FreeACP.
