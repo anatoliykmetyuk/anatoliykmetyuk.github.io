@@ -40,6 +40,7 @@ google_analytics:
 comments: false
 
 # Plugins
+# TODO: add support for graphviz, plantuml, possibly use the approach here: https://numi.st/post/2023/graphviz/
 plugins:
   - jekyll-archives
   - jekyll-paginate
