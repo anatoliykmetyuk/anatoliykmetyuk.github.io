@@ -11,8 +11,8 @@ This is the third part of my progress report on a rewriting-based implementation
 
 If you have not read the previous parts of this report, you are advised to do so before reading this one:
 
-- [Rewriting Process Algebra, Part 1: Introduction to Process Algebra](/posts/2017-01-11-rewriting-process-algebra-part-1-introduction-to-process-algebra.html)
-- [Rewriting Process Algebra, Part 2: Engine Theory](/posts/2017-01-12-rewriting-process-algebra-part-2-engine-theory.html)
+- [Rewriting Process Algebra, Part 1: Introduction to Process Algebra](/posts/2017-01-11-rewriting-process-algebra-part-1-introduction-to-process-algebra)
+- [Rewriting Process Algebra, Part 2: Engine Theory](/posts/2017-01-12-rewriting-process-algebra-part-2-engine-theory)
 
 
 # Tree

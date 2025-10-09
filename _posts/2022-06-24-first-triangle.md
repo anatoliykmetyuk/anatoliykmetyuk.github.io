@@ -7,7 +7,7 @@ layout: post
 
 At the core of every game is its _render loop_ – the loop that renders each frame that is then displayed to the player. The API Vulkan exposes is vast, which means there is no single right way to implement a render loop in Vulkan. In this article, I'll describe the loop presented in the [Drawing](https://vulkan-tutorial.com/Drawing_a_triangle/Drawing/Framebuffers) section of the [Vulkan tutorial](https://vulkan-tutorial.com).
 
-> This is the third article in the series where I share my impressions after following the Vulkan's tutorial using Scala 3 – here is the [first article](/posts/2022-06-10-vulkan-setup.html). For every chapter, I implement an example in a separate file. The examples repository is available on GitHub: [anatoliykmetyuk/Vulkan-Tutorial-Scala](https://github.com/anatoliykmetyuk/Vulkan-Tutorial-Scala). In its structure, it follows the [Java implementation](https://github.com/Naitsirc98/Vulkan-Tutorial-Java), so it is also a good chance to compare how Scala and Java approaches to the same task differ.
+> This is the third article in the series where I share my impressions after following the Vulkan's tutorial using Scala 3 – here is the [first article](/posts/2022-06-10-vulkan-setup). For every chapter, I implement an example in a separate file. The examples repository is available on GitHub: [anatoliykmetyuk/Vulkan-Tutorial-Scala](https://github.com/anatoliykmetyuk/Vulkan-Tutorial-Scala). In its structure, it follows the [Java implementation](https://github.com/Naitsirc98/Vulkan-Tutorial-Java), so it is also a good chance to compare how Scala and Java approaches to the same task differ.
 
 <!-- more -->
 

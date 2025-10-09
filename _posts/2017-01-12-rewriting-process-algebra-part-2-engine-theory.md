@@ -11,8 +11,8 @@ This is a second part of a progress report on my attempt to model a process alge
 
 The other two parts:
 
-- [Rewriting Process Algebra, Part 1: Introduction to Process Algebra](/posts/2017-01-11-rewriting-process-algebra-part-1-introduction-to-process-algebra.html)
-- [Rewriting Process Algebra, Part 3: FreeACP Implementation](/posts/2017-01-13-rewriting-process-algebra-part-3-freeacp-implementation.html)
+- [Rewriting Process Algebra, Part 1: Introduction to Process Algebra](/posts/2017-01-11-rewriting-process-algebra-part-1-introduction-to-process-algebra)
+- [Rewriting Process Algebra, Part 3: FreeACP Implementation](/posts/2017-01-13-rewriting-process-algebra-part-3-freeacp-implementation)
 
 # Standard SubScript implementation
 

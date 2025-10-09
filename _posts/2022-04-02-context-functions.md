@@ -4,7 +4,7 @@ description: How Context Functions can help design better DSLs in Scala
 layout: post
 ---
 
-A strong side of Scala is its DSL capability. DSLs, or domain-specific languages, are programming languages designed for convenient expression of operations in a certain domain. An example of such a DSL is the one I [designed](/posts/2022-02-19-launching-rockets.html) for Simple Rockets 2 – SR2 Compiler. That DSL can be used to program a rocket in the game.
+A strong side of Scala is its DSL capability. DSLs, or domain-specific languages, are programming languages designed for convenient expression of operations in a certain domain. An example of such a DSL is the one I [designed](/posts/2022-02-19-launching-rockets) for Simple Rockets 2 – SR2 Compiler. That DSL can be used to program a rocket in the game.
 
 <!-- more -->
 
