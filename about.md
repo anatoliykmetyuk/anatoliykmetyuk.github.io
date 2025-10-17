@@ -10,6 +10,8 @@ Hi! I'm Anatolii. I'm a software engineer an a hacker passionate about personal 
 
 My CV is available here: [CV](/assets/files/anatolii-kmetiuk-cv.pdf).
 
+If anything in this blog or otherwise resonates with you, I'd be happy to hear from you! The best way to reach me is via my email, which you can find in my CV. Alos I am on [LinkedIn](https://www.linkedin.com/in/akmetiuk/).
+
 <br/>
 <br/>
 
