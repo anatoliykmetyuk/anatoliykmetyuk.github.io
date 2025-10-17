@@ -160,6 +160,9 @@
 .post-content {
   margin-bottom: $spacing-unit;
 
+  text-align: justify;
+  text-justify: inter-word;
+
   h1 {
     font-size: 38px;
 
@@ -190,6 +193,10 @@
     @include media-query($on-laptop) {
       font-size: 18px;
     }
+  }
+
+  a {
+    text-decoration: underline;
   }
 }
 
