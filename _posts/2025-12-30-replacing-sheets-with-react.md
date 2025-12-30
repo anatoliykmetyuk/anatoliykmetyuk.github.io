@@ -30,7 +30,7 @@ However, in my experience, if you just let the agent iterate after the first few
 **Fourth**, it is important to define correctness verification procedure. It involves compilation, linting, and testing - unit and integration. When Cursor makes its plan, it is important to make sure it includes verification pipeline after each step. Ask it to do so if it hasn't included based on your first prompt! Only in such a way can you ensure it works iteratively and verifies completion of each step.
 
 ## Scaffolding
-Every app has a structure. Think of it as a set of boxes that AI then fills with code. If you provide a good framing for those semantic boxes, AI will do a good job filling them.
+Every class of apps has a structure. Apps may be different, but their structure is the same. Think of it as a set of boxes that AI then fills with code. If you provide a good framing for those semantic boxes, AI will do a good job filling them.
 
 ![App Structure](/post_assets/2025-12-30-replacing-sheets-with-react/app-structure.svg)
 
