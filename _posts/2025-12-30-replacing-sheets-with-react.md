@@ -42,3 +42,5 @@ Yet another useful framing technique is to provide examples for what AI should p
 
 ## Outcome
 Setting up financial spreadsheets in precisely the way needed sometimes can take a couple of evenings. With some practice, developing React apps that push data around in the manner described above takes only a few hours. Much less brainpower goes into small technical details such as debugging a technical bug.
+
+In the same way as we are no longer programming using punchcards or assembly but using high-level languages and frameworks, it seems the trend in programming is such that it would soon be possible to develop apps using only precise natural language.
